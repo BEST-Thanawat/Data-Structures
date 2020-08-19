@@ -11,6 +11,10 @@ namespace Binary_Search_Tree
 {
     class Program
     {
+        //Example
+        //  10
+        // 5  15
+        //1
         static void Main(string[] args)
         {
             Node root = new Node(10);
@@ -97,6 +101,7 @@ namespace Binary_Search_Tree
             return true;
         }
 
+        //10 5 15 1
         public List<int> BFS()
         {
             if (Root == null) return null;
@@ -122,6 +127,7 @@ namespace Binary_Search_Tree
             return result;
         }
 
+        //1 5 10 15
         public List<int> DFS_InOrder()
         {
             if (Root == null) return null;
@@ -149,6 +155,7 @@ namespace Binary_Search_Tree
             return result;
         }
 
+        //10 5 1 15
         public List<int> DFS_PreOrder()
         {
             if (Root == null) return null;
@@ -176,6 +183,7 @@ namespace Binary_Search_Tree
             return result;
         }
 
+        //1 5 15 10
         public List<int> DFS_PostOrder()
         {
             if (Root == null) return null;
