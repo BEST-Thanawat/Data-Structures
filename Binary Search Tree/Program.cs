@@ -47,6 +47,9 @@ namespace Binary_Search_Tree
         }
     }
 
+    //Binary search tree (Sorted tree)
+    //The left subtree of a node contains only nodes with keys lesser than the node’s key.
+    //The right subtree of a node contains only nodes with keys greater than the node’s key.
     public class BinarySearchTree
     {
         public Node Root { get; set; }
