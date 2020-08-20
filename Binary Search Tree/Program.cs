@@ -15,6 +15,7 @@ namespace Binary_Search_Tree
         //  10
         // 5  15
         //1
+   
         static void Main(string[] args)
         {
             Node root = new Node(10);
@@ -30,6 +31,52 @@ namespace Binary_Search_Tree
             {
                 Console.WriteLine(item + ",");
             }
+
+            char[][] grid =
+            {
+                new char[] { '1', '1', '1', '1', '0' },
+                new char[] { '1', '1', '0', '1', '0' },
+                new char[] { '1', '1', '0', '0', '0' },
+                new char[] { '0', '0', '0', '0', '0' },
+            };
+
+            NumIslands(grid);
+
+
+        }
+
+        public static int NumIslands(char[][] grid)
+        {
+            int island = 0;
+            for (int i = 0; i < grid.Length; i++)
+            {
+                for (int j = 0; j < grid[i].Length; j++)
+                {
+                    if (grid[i][j] == '1')
+                    {
+                        if (Check(grid, i, j) == 1)
+                            island++;
+                    }
+                }
+            }
+
+            return island;
+        }
+
+        public static int Check(char[][] grid, int i, int j)
+        {
+            if (i < 0 || i >= grid.Length || j < 0 || j >= grid[i].Length || grid[i][j] == '0')
+            {
+                return 0;
+            }
+
+            grid[i][j] = '0';
+            Check(grid, i, j + 1);
+            Check(grid, i, j - 1);
+            Check(grid, i + 1, j);
+            Check(grid, i - 1, j);
+
+            return 1;
         }
     }
 
