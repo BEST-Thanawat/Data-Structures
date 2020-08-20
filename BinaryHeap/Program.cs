@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net.Http.Headers;
 
 namespace BinaryHeap
 {
@@ -67,6 +68,67 @@ namespace BinaryHeap
             }
 
             return true;
+        }
+
+        private int ExtractMax()
+        {
+            if (Values.Count == 0) return -1;
+
+            int max = Values[0];
+            int last = Values[Values.Count - 1];
+            Values.RemoveAt(Values.Count -1);
+
+            if (Values.Count > 0)
+            {
+                Values[0] = last;
+                SinkDown();
+            }
+
+            return max;
+        }
+
+        private void SinkDown()
+        {
+            int index = 0;
+            int nodeToSinkDown = Values[index];
+
+            int leftChildIndex, rightChildIndex;
+            int leftChildNode = 0, rightChildNode = 0;
+            int swapIndex = index;
+
+            while (true)
+            {
+                bool swap = false;
+                leftChildIndex = (2 * index) + 1;
+                rightChildIndex = (2 * index) + 2;
+
+                if(leftChildIndex < Values.Count)
+                {
+                    leftChildNode = Values[leftChildIndex];
+                    if(leftChildNode > nodeToSinkDown)
+                    {
+                        swap = true;
+                        swapIndex = leftChildIndex;
+                    }
+                }
+
+                if(rightChildIndex < Values.Count)
+                {
+                    rightChildNode = Values[rightChildIndex];
+                    if((!swap && rightChildNode > nodeToSinkDown) ||
+                        (swap && rightChildNode > leftChildNode))
+                    {
+                        swap = true;
+                        swapIndex = rightChildIndex;
+                    }
+                }
+
+                if (!swap) return;
+
+                Values[index] = Values[swapIndex];
+                Values[swapIndex] = nodeToSinkDown;
+                index = swapIndex;
+            }
         }
     }
 }
