@@ -8,6 +8,19 @@ namespace BinaryHeap
     {
         static void Main(string[] args)
         {
+            /* 
+             *           60
+             *    40            50
+             * 20    10      30
+            */
+
+            BinaryHeap bh = new BinaryHeap();
+            bh.Insert(50);
+            bh.Insert(40);
+            bh.Insert(30);
+            bh.Insert(20);
+            bh.Insert(10);
+            bh.Insert(60);
             Console.WriteLine("Hello World!");
         }
     }
@@ -34,10 +47,16 @@ namespace BinaryHeap
 
         private bool BubbleUp()
         {
+            //Get recently added index
             int elementIndex = Values.Count - 1;
+
+            //Get recently added value
             int element = Values[elementIndex];
+
+            //Get recently added parent
             int parentIndex = (elementIndex - 1) / 2;
 
+            //Need to be maintained
             while (parentIndex >= 0 && element > Values[parentIndex])
             {
                 Values[elementIndex] = Values[parentIndex];
