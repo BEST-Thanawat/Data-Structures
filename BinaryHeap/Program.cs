@@ -15,7 +15,7 @@ namespace BinaryHeap
              * 20    10      30
             */
 
-            BinaryHeap bh = new BinaryHeap();
+            BinaryMinHeap bh = new BinaryMinHeap();
             bh.Insert(50);
             bh.Insert(40);
             bh.Insert(30);
@@ -24,16 +24,16 @@ namespace BinaryHeap
             bh.Insert(60);
 
             //Remove 60
-            bh.ExtractMax();
+            //bh.ExtractMax();
 
             Console.WriteLine("Hello World!");
         }
     }
 
-    public class BinaryHeap
+    public class BinaryMaxHeap
     {
         public List<int> Values { get; private set; }
-        public BinaryHeap()
+        public BinaryMaxHeap()
         {
             Values = new List<int>();
         }
@@ -133,6 +133,51 @@ namespace BinaryHeap
                 Values[swapIndex] = nodeToSinkDown;
                 index = swapIndex;
             }
+        }
+    }
+
+    public class BinaryMinHeap
+    {
+        public List<int> Values { get; private set; }
+        public BinaryMinHeap()
+        {
+            Values = new List<int>();
+        }
+
+        public bool Insert(int value)
+        {
+            if(Values.Count == 0)
+            {
+                Values.Add(value);
+                return true;
+            }
+
+            Values.Add(value);
+            return BubbleUp();
+        }
+
+        private bool BubbleUp()
+        {
+            //Get recently added index
+            int elementIndex = Values.Count - 1;
+
+            //Get recently added value
+            int element = Values[elementIndex];
+
+            //Get recently added parent
+            int parentIndex = (elementIndex - 1) / 2;
+
+            //Need to be maintained
+            while (parentIndex >= 0 && element < Values[parentIndex])
+            {
+                Values[elementIndex] = Values[parentIndex];
+                Values[parentIndex] = element;
+
+                elementIndex = parentIndex;
+                parentIndex = (elementIndex - 1) / 2;
+            }
+
+            return true;
         }
     }
 }
