@@ -22,6 +22,10 @@ namespace BinaryHeap
             bh.Insert(20);
             bh.Insert(10);
             bh.Insert(60);
+
+            //Remove 60
+            bh.ExtractMax();
+
             Console.WriteLine("Hello World!");
         }
     }
@@ -70,7 +74,7 @@ namespace BinaryHeap
             return true;
         }
 
-        private int ExtractMax()
+        public int ExtractMax()
         {
             if (Values.Count == 0) return -1;
 
