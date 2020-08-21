@@ -24,7 +24,7 @@ namespace BinaryHeap
             bh.Insert(60);
 
             //Remove 60
-            //bh.ExtractMax();
+            bh.ExtractMin();
 
             Console.WriteLine("Hello World!");
         }
@@ -178,6 +178,68 @@ namespace BinaryHeap
             }
 
             return true;
+        }
+
+        public int ExtractMin()
+        {
+            if (Values.Count == 0) return -1;
+
+            int min = Values[0];
+            int last = Values[Values.Count - 1];
+            Values.RemoveAt(Values.Count - 1);
+
+            if(Values.Count > 0)
+            {
+                Values[0] = last;
+                SinkDown();
+            }
+
+            return min;
+        }
+
+        private void SinkDown()
+        {
+            int index = 0;
+            int nodeToSinkDown = Values[index];
+
+            int leftChildIndex, rightChildIndex;
+            int leftChildNode = 0, rightChildNode = 0;
+            int swapIndex = index;
+
+            while (true)
+            {
+                bool swap = false;
+                leftChildIndex = (2 * index) + 1;
+                rightChildIndex = (2 * index) + 2;
+
+                if(leftChildIndex < Values.Count)
+                {
+                    leftChildNode = Values[leftChildIndex];
+                    if (leftChildNode < nodeToSinkDown)
+                    {
+                        swap = true;
+                        swapIndex = leftChildIndex;
+                    }
+                }
+
+                if(rightChildIndex < Values.Count)
+                {
+                    rightChildNode = Values[rightChildIndex];
+                    if ((!swap && rightChildNode < nodeToSinkDown) ||
+                        (swap && rightChildNode < leftChildNode))
+                    {
+                        swap = true;
+                        swapIndex = rightChildIndex;
+                    }
+
+                }
+
+                if (!swap) return;
+
+                Values[index] = Values[swapIndex];
+                Values[swapIndex] = nodeToSinkDown;
+                index = swapIndex;
+            }
         }
     }
 }
