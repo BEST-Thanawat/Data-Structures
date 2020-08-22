@@ -14,17 +14,26 @@ namespace BinaryHeap
              *    40            50
              * 20    10      30
             */
-
-            BinaryMinHeap bh = new BinaryMinHeap();
-            bh.Insert(50);
-            bh.Insert(40);
-            bh.Insert(30);
-            bh.Insert(20);
-            bh.Insert(10);
-            bh.Insert(60);
-
+            BinaryMaxHeap bhMax = new BinaryMaxHeap();
+            bhMax.Insert(50);
+            bhMax.Insert(40);
+            bhMax.Insert(30);
+            bhMax.Insert(20);
+            bhMax.Insert(10);
+            bhMax.Insert(60);
             //Remove 60
-            bh.ExtractMin();
+            bhMax.ExtractMax();
+
+
+            BinaryMinHeap bhMin = new BinaryMinHeap();
+            bhMin.Insert(50);
+            bhMin.Insert(40);
+            bhMin.Insert(30);
+            bhMin.Insert(20);
+            bhMin.Insert(10);
+            bhMin.Insert(60);
+            //Remove 60
+            bhMin.ExtractMin();
 
             Console.WriteLine("Hello World!");
         }
