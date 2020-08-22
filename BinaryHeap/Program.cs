@@ -26,16 +26,18 @@ namespace BinaryHeap
 
 
             BinaryMinHeap bhMin = new BinaryMinHeap();
-            bhMin.Insert(50);
-            bhMin.Insert(40);
-            bhMin.Insert(30);
             bhMin.Insert(20);
+            bhMin.Insert(30);
+            bhMin.Insert(40);
+            bhMin.Insert(50);
+            bhMin.Insert(60); 
+            bhMin.Insert(70);
+            bhMin.Insert(80);
+            bhMin.Insert(90);
+            bhMin.Insert(100);
             bhMin.Insert(10);
-            bhMin.Insert(60);
             //Remove 60
             bhMin.ExtractMin();
-
-            Console.WriteLine("Hello World!");
         }
     }
 
