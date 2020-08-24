@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Priority_Queue
 {
@@ -10,15 +11,26 @@ namespace Priority_Queue
         }
     }
 
-    public class Node
+    public class PriorityQueue
     {
-        public string Value { get; set; }
-        public int Priority { get; set; }
-
-        public Node(string value, int priority)
+        public List<Node> Values { get; set; }
+        public PriorityQueue()
         {
-            Value = value;
-            Priority = priority;
+            Values = new List<Node>();
         }
+
+        public class Node
+        {
+            public string Value { get; set; }
+            public int Priority { get; set; }
+
+            public Node(string value, int priority)
+            {
+                Value = value;
+                Priority = priority;
+            }
+        }
+
     }
+    
 }
