@@ -8,6 +8,10 @@ namespace Priority_Queue
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            PriorityQueue priorityQueue = new PriorityQueue();
+            priorityQueue.Values.Add(new PriorityQueue.Node("ABC", 9));
+            priorityQueue.Values.Add(new PriorityQueue.Node("DEF", 1));
         }
     }
 
