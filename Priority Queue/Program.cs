@@ -10,10 +10,10 @@ namespace Priority_Queue
             Console.WriteLine("Hello World!");
 
             PriorityQueue priorityQueue = new PriorityQueue();
-            priorityQueue.Values.Add(new PriorityQueue.Node("ABC", 9));
-            priorityQueue.Values.Add(new PriorityQueue.Node("DEF", 1));
-            priorityQueue.Values.Add(new PriorityQueue.Node("GHI", 100));
-            priorityQueue.Values.Add(new PriorityQueue.Node("JKL", 235));
+            priorityQueue.Enqueue("ABC", 9);
+            priorityQueue.Enqueue("DEF", 1);
+            priorityQueue.Enqueue("GHI", 100);
+            priorityQueue.Enqueue("JKL", 235);
         }
     }
 
