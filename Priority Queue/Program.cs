@@ -67,6 +67,26 @@ namespace Priority_Queue
 
             return true;
         }
+
+        private Node Dequeue()
+        {
+            if (Values.Count == 0)
+            {
+                return null;
+            }
+
+            Node max = Values[0];
+
+            Node last = Values[Values.Count - 1];
+            Values.RemoveAt(Values.Count - 1);
+
+            if(Values.Count > 0)
+            {
+                Values[0] = last;
+            }
+
+            return max;
+        }
     }
     
 }
