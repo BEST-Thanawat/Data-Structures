@@ -114,6 +114,25 @@ namespace Priority_Queue
                         swapIndex = leftChildIndex;
                     }
                 }
+
+                if(rightChildIndex < Values.Count)
+                {
+                    rightChildNode = Values[rightChildIndex];
+                    if ((!swap && rightChildNode.Priority > nodeToSinkDown.Priority) || (swap && rightChildNode.Priority > leftChildNode.Priority))
+                    {
+                        swap = true;
+                        swapIndex = rightChildIndex;
+                    }
+                }
+
+                if (!swap)
+                {
+                    return;
+                }
+
+                Values[index] = Values[swapIndex];
+                Values[swapIndex] = nodeToSinkDown;
+                index = swapIndex;
             }
         }
     }
