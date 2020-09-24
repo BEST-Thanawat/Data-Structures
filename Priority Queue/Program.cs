@@ -83,9 +83,38 @@ namespace Priority_Queue
             if(Values.Count > 0)
             {
                 Values[0] = last;
+                SinkDown();
             }
 
             return max;
+        }
+
+        private void SinkDown()
+        {
+            int index = 0;
+            Node nodeToSinkDown = Values[index];
+
+            int leftChildIndex, rightChildIndex;
+            Node leftChildNode = null;
+            Node rightChildNode = null;
+            int swapIndex = index;
+
+            while (true)
+            {
+                bool swap = false;
+                leftChildIndex = (2 * index) + 1;
+                rightChildIndex = (2 * index) + 2;
+
+                if(leftChildIndex < Values.Count)
+                {
+                    leftChildNode = Values[leftChildIndex];
+                    if (leftChildNode.Priority > nodeToSinkDown.Priority)
+                    {
+                        swap = true;
+                        swapIndex = leftChildIndex;
+                    }
+                }
+            }
         }
     }
     
