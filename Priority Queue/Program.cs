@@ -14,6 +14,10 @@ namespace Priority_Queue
             priorityQueue.Enqueue("DEF", 1);
             priorityQueue.Enqueue("GHI", 100);
             priorityQueue.Enqueue("JKL", 235);
+            priorityQueue.Enqueue("MNO", 2);
+
+            //Queue will be sort while dequeuing.
+            priorityQueue.Dequeue();
         }
     }
 
@@ -68,7 +72,7 @@ namespace Priority_Queue
             return true;
         }
 
-        private Node Dequeue()
+        public Node Dequeue()
         {
             if (Values.Count == 0)
             {
