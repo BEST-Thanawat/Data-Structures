@@ -11,12 +11,16 @@ namespace Priority_Queue
 
             PriorityQueue priorityQueue = new PriorityQueue();
             priorityQueue.Enqueue("ABC", 9);
-            priorityQueue.Enqueue("DEF", 1);
+            priorityQueue.Enqueue("DEF", 10);
             priorityQueue.Enqueue("GHI", 100);
             priorityQueue.Enqueue("JKL", 235);
+            priorityQueue.Enqueue("MNO", 1);
             priorityQueue.Enqueue("MNO", 2);
 
             //Queue will be sort while dequeuing.
+            priorityQueue.Dequeue();
+            priorityQueue.Dequeue();
+            priorityQueue.Dequeue();
             priorityQueue.Dequeue();
         }
     }
