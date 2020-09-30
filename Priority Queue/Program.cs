@@ -17,11 +17,11 @@ namespace Priority_Queue
             priorityQueue.Enqueue("MNO", 1);
             priorityQueue.Enqueue("MNO", 2);
 
-            //Queue will be sort while dequeuing.
-            priorityQueue.Dequeue();
-            priorityQueue.Dequeue();
-            priorityQueue.Dequeue();
-            priorityQueue.Dequeue();
+            ////Queue will be sort while dequeuing.
+            //priorityQueue.Dequeue();
+            //priorityQueue.Dequeue();
+            //priorityQueue.Dequeue();
+            //priorityQueue.Dequeue();
         }
     }
 
