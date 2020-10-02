@@ -109,34 +109,34 @@ namespace Priority_Queue
 
             while (true)
             {
-                bool swap = false;
-                leftChildIndex = (2 * index) + 1;
-                rightChildIndex = (2 * index) + 2;
+                //bool swap = false;
+                //leftChildIndex = (2 * index) + 1;
+                //rightChildIndex = (2 * index) + 2;
 
-                if(leftChildIndex < Values.Count)
-                {
-                    leftChildNode = Values[leftChildIndex];
-                    if (leftChildNode.Priority > nodeToSinkDown.Priority)
-                    {
-                        swap = true;
-                        swapIndex = leftChildIndex;
-                    }
-                }
+                //if(leftChildIndex < Values.Count)
+                //{
+                //    leftChildNode = Values[leftChildIndex];
+                //    if (leftChildNode.Priority > nodeToSinkDown.Priority)
+                //    {
+                //        swap = true;
+                //        swapIndex = leftChildIndex;
+                //    }
+                //}
 
-                if(rightChildIndex < Values.Count)
-                {
-                    rightChildNode = Values[rightChildIndex];
-                    if ((!swap && rightChildNode.Priority > nodeToSinkDown.Priority) || (swap && rightChildNode.Priority > leftChildNode.Priority))
-                    {
-                        swap = true;
-                        swapIndex = rightChildIndex;
-                    }
-                }
+                //if(rightChildIndex < Values.Count)
+                //{
+                //    rightChildNode = Values[rightChildIndex];
+                //    if ((!swap && rightChildNode.Priority > nodeToSinkDown.Priority) || (swap && rightChildNode.Priority > leftChildNode.Priority))
+                //    {
+                //        swap = true;
+                //        swapIndex = rightChildIndex;
+                //    }
+                //}
 
-                if (!swap)
-                {
-                    return;
-                }
+                //if (!swap)
+                //{
+                //    return;
+                //}
 
                 Values[index] = Values[swapIndex];
                 Values[swapIndex] = nodeToSinkDown;
