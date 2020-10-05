@@ -135,7 +135,7 @@ namespace Priority_Queue
 
                 if (!swap)
                 {
-                    //return;
+                    return;
                 }
 
                 Values[index] = Values[swapIndex];
