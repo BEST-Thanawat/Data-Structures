@@ -17,6 +17,18 @@ namespace Priority_Queue
             priorityQueue.Enqueue("MNO", 1);
             priorityQueue.Enqueue("MNO", 2);
 
+            priorityQueue.Enqueue("ABC", 11);
+            priorityQueue.Enqueue("DEF", 111);
+            priorityQueue.Enqueue("GHI", 1111);
+            priorityQueue.Enqueue("JKL", 11111);
+            priorityQueue.Enqueue("MNO", 22);
+            priorityQueue.Enqueue("MNO", 222);
+            priorityQueue.Enqueue("ABC", 2222);
+            priorityQueue.Enqueue("DEF", 22222);
+            priorityQueue.Enqueue("GHI", 3);
+            priorityQueue.Enqueue("JKL", 33);
+            priorityQueue.Enqueue("MNO", 333);
+            priorityQueue.Enqueue("MNO", 3333);
             ////Queue will be sort while dequeuing.
             //priorityQueue.Dequeue();
             //priorityQueue.Dequeue();
